@@ -7,7 +7,7 @@ var config = require('./config/config');
 
 var indexRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
-
+var location = require('./routes/location');
 var app = express();
 
 app.set('llave',config.llave);
@@ -20,5 +20,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/location', location)
 module.exports = app;
