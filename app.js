@@ -9,7 +9,10 @@ var indexRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
 var location = require('./routes/location');
 var app = express();
+var io = require('./socket.io');
+var server = app.listen(3000);
 
+io.startIo(server);
 app.set('llave',config.llave);
 
 app.use(logger('dev'));
