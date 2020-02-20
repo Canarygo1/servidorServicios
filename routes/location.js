@@ -60,7 +60,7 @@ module.exports = function (io) {
         function connectTrackedUserTracker(trackedUserSocketId, clientSocket) {
             if (trackedUsers[trackedUserSocketId] != null) {
                 var message = "User" + clientSocket.id + "is traking" + trackedUsers[trackedUserSocketId]["nickname"]
-                console.log(message);
+                console.log(messagep);
                 if (trackedUsersTrackers[trackedUserSocketId] == null) {
                     trackedUsersTrackers[trackedUserSocketId] = []
                 }
