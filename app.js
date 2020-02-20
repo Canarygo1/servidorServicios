@@ -26,6 +26,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/' ,indexRouter);
-app.use('/users',jwtMW, usersRouter);
+app.use('/servicios', usersRouter);
 var routes = require('./routes/location')(io);
 module.exports = app;
