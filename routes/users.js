@@ -4,15 +4,15 @@ const connectionDb = require('./../config/db');
 
 
 var connection = connectionDb.dbConnection();
-// router.post('/all', function(req, res, next) {
-//   console.log("info");
-//   var email= req.body.email;
-//
-//     connection.query('Select * from usuarios where correo = ?',email,function (error,result,fields) {
-//       res.send(result);
-//     });
-//
-// });
+router.post('/prueba', function(req, res, next) {
+  console.log("info");
+  var email= req.body.email;
+
+    connection.query('Select * from usuarios where correo = ?',email,function (error,result,fields) {
+      res.send(result);
+    });
+
+});
 
 router.get('/all',function (req,res,next) {
     connection.query('Select * from trabajo',function (erros,result,fields) {
