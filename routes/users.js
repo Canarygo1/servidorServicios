@@ -15,7 +15,8 @@ router.post('/prueba', function(req, res, next) {
 });
 
 router.get('/all',function (req,res,next) {
-    connection.query('Select * from trabajo',function (erros,result,fields) {
+    connection.query('Select trabajo.id, trabajo.tiposervicio, trabajo.fechatrabajo, trabajo.masinformacion, trabajo.preciotrabajo,'+
+        ' trabajo.votacion, CONCAT(usuarios.nombre, " ", usuarios.apellidos) AS nombre from trabajo JOIN usuarios ON usuarios.id = trabajo.idempleador',function (erros,result,fields) {
         res.send(result)
     })
 });

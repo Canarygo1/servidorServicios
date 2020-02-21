@@ -67,6 +67,8 @@ function register(user) {
         connection.query("INSERT INTO usuarios (nombre, apellidos,fechanacimiento, correo, password, telefono, vip) VALUES (?, ?, ?, ?, ?, ?, ?);",
             [user.nombre, user.apellidos, user.fechaNacimiennto, user.correo, user.password, user.telefono, user.vip],
             (error, result, fields) => {
+            console.log(error);
+            console.log(result);
                 if (error) {
                     reject();
                 }
@@ -86,12 +88,12 @@ router.post('/register', function (req, res, next) {
         return user;
     }).then((user) => {
         return register(user)
-    }).then(() => {
+    }).then(() => { x
         res.json({
             "code": 200,
             "responseType": "User created"
         });
-    }).catch(error => res.send("error in the user creation"));
+    }).catch(error => res.send(error+"error in the user creation"));
 });
 
 function passwordEncryption(password) {
